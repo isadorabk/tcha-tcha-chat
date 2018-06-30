@@ -2,7 +2,7 @@ class Quote {
   constructor(author, quote) {
     this.user = author,
       this.message = quote,
-      this.time = 'now' //moment().unix()
+      this.time = Math.round((new Date()).getTime() / 1000);
   }
 }
 
@@ -17,6 +17,8 @@ const getQuote = function (person) {
       })
       .then((data) => {
         let quote = new Quote('Donald Trump', data.message);
+        console.log(quote);
+        
       })
   }
   if (person === 'webdev') {
