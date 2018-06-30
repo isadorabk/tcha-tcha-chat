@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Tcha Tcha Chat</title>
+</head>
+<body>
+
+  <!-- WELCOME PAGE-->
+
+  <div class="welcome">
+    <div class="container">
+      <div class="logoContainer"><img class="welcomeLogo" src="./Chat.png"></div>
+      <form action="#">
+        <input class="nameInput" type="text" placeholder="Enter your name">
+        <input type="submit" class="nameInputButton" value="Submit">
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <!-- Main Page -->
+
+<div class="none">
+  <div class="dropMeDown dropMeDownClosed">
+      <div class="greeting"> Hi ${name}</div>
+      <ul class="nav">
+      <li>Chat Room</li>
+      <li>BotChat</li>
+        <label class="container">WebDev
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+          
+          <label class="container">Trump
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          
+          <label class="container">Chuck
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          
+          <label class="container">Four
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+      <li>Donation</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <nav>
+    <h1 class="greeting">Hi ${name}</h1>
+    <ul>
+      <li>Bot Chat</li>
+      <li>Human Chat</li>
+      <li>Settings</li>
+      <li>Other Stuff</li>
+      <li>Donate</li>
+    </ul>
+  </nav> -->
+
+
+
+  <div class="mainContainer">
+
+  
+
+
+    <div class="menu">
+      <div class="menuLogo menuLogoClosed"><img class="menuImg" src="./Chat.png"></div>
+    </div>
+
+
+
+
+    <div class="screen">
+
+        <input class="messageWrite" type="text" placeholder="Write a message...">
+        <input type="submit" class="messageSend" value="send">
+    </div>
+    
+    </div>
+  </div>
+  
+ 
+
+
+  
+</body>
+<script src="./chatbots.js"></script>
+<script src="./script.js"></script>
+</html> 

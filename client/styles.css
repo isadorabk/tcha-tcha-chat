@@ -1,0 +1,188 @@
+/*welcome page styles*/
+
+.welcome {
+  display: none;  
+  /* WHILE TESTING MAIN PAGE */
+  
+  width: 100%;
+  height: 100vh;
+  background-color: #41C8F2;
+}
+
+.welcome .container {
+  width: 70%;
+  padding-top: 40%;
+}
+
+.welcomeLogo {
+  width: 100%;
+}
+
+.welcome .logoContainer {
+  background-color: white;
+  height: 70%;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+
+.nameInput {
+  width: 100%;
+  margin-top: 30px;
+  text-align:center;
+}
+
+.nameInputButton {
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  background-color: white !important;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Chat */
+
+.mainContainer {
+  /*display: none;*/
+
+  width: 100%;
+  height: 100vh;
+  background-color: #41C8F2;
+}
+
+
+
+
+
+/* MENU HEADER */
+
+.menu {
+  padding: 10px;
+}
+
+
+.menuLogo {
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menuImg {
+  width: 100%;
+  transition-duration: .3s;
+}
+
+.menuImg:hover {
+  transform: scale(1.1);
+  transition-duration: .3s;
+}
+
+.menuLogoOpen {
+  transform: translateY(70vh) rotate(360deg);
+  transition-duration: 1.5s;
+  position: relative; 
+  z-index: 10;
+}
+
+.menuLogoClosed {
+  transition-duration: 1.5s;
+  position: relative; 
+  z-index: 10;
+}
+
+
+
+
+
+
+
+
+/* DROP DOWN MENU BAR */
+
+.dropMeDown {
+  text-align: center;
+ 
+  background-color: #41C8F2;
+  height: 70vh
+}
+
+.greeting {
+  font-size: 10rem;
+}
+
+.none{
+  height: 0px;
+}
+
+.dropMeDownOpen {
+  transition-duration: 1.5s;
+  position: relative;
+  z-index: 10;
+
+}
+
+
+.dropMeDownClosed{
+  transition-duration: 1.5s;
+  transform: translateY(-70vh);
+  position: relative;
+  z-index: 10;
+}
+
+.nav {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*SCREEN STUFF*/
+
+.screen {
+  background-color: white;
+  width: 90%;
+  height: 85%;
+  margin: auto;
+  border-radius: 1%;
+  position: relative;
+
+}
+
+.messageWrite {
+  position: absolute;
+  bottom: 1%;
+  left: 5%;
+  width:65%;
+}
+
+.messageSend {
+  position: absolute;
+  bottom:1%;
+  right:5%;
+}
+
