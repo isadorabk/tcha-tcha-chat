@@ -2,11 +2,11 @@ class Quote {
   constructor(author, quote) {
     this.user = author,
       this.message = quote,
-      this.time = Math.round((new Date()).getTime() / 1000);
+      this.time = 'now' //moment().unix()
   }
 }
 
-const getQuote = function (person) {
+const getQuote = async function (person) {
 
   // TRUMP QUOTES
   if (person === 'trump') {
@@ -17,18 +17,20 @@ const getQuote = function (person) {
       })
       .then((data) => {
         let quote = new Quote('Donald Trump', data.message);
-        console.log(quote);
-        
+        console.log(quote)
       })
   }
   if (person === 'webdev') {
     // WEBDEV QUOTES
     const result = fetch('http://quotes.stormconsultancy.co.uk/random.json')
       .then((response) => response.json())
-      .then((res) => res);
-      console.log(result);
-
-
+      .then((data) => {
+        let quote = new Quote('WebDev', data.message);
+      })
+    // .then((data) => {
+    //   let quote = new Quote(data.author, data.quote)
+    //   return quote;
+    // })
   }
 
   if (person === 'chuck') {
@@ -43,4 +45,5 @@ const getQuote = function (person) {
         console.log(quote);
       });
   }
+  //return quote;
 }
