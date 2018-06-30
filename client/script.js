@@ -45,14 +45,29 @@ grab('.menuLogo').addEventListener('click', () => {
 
 const screen = grab('.screen')
 
+grab('.messageWrite').addEventListener('keyup', () => {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    grab('.messageSend').click();
+  }
+})
 
-function textBubble (name) {
+grab('.messageSend').addEventListener('click', () => {
+  
+  let msg = grab('.messageWrite').value;
+  if (msg) alert(msg);
+  grab('.screen').appendChild(createMessage(quote('trump')));
+})
+
+
+function createMessage(obj) {
+
   let bubble = document.createElement('div')
   bubble.classList.add('message');
-  bubble.innerHTML += `<h2>${name}</h2>`;
-  bubble.innerHTML += `<p>${message}</p>`;
-  bubble.innerHTML += `<p>${timeStamp}</p>`;
-  screen.appendChild(bubble);
+  bubble.innerHTML += `<h2>${obj.user}</h2>`;
+  bubble.innerHTML += `<p>${obj.message}</p>`;
+  bubble.innerHTML += `<p>${obj.time}</p>`;
+  return bubble;
 }
 
 
