@@ -20,6 +20,9 @@ function grab(element) {
   return document.querySelector(element);
 }
 
+function getRandomInt (min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 
 
@@ -47,7 +50,7 @@ const screen = grab('.screen')
 
 grab('.messageWrite').addEventListener('keyup', () => {
   event.preventDefault();
-  if (event.keyCode === 13) {
+  if (event.keyCode === 13 && grab('.messageWrite').value !== '') {
     grab('.messageSend').click();
   }
 })
@@ -55,9 +58,13 @@ grab('.messageWrite').addEventListener('keyup', () => {
 grab('.messageSend').addEventListener('click', async () => {
   
   let msg = new Quote ('Me', grab('.messageWrite').value);
-  let quote = await getQuote('trump');
+  grab('.messageWrite').value = '';
+  let quote = await getQuote(getRandomInt(1,4));
   grab('.screen').appendChild(createMessage(msg))
-  grab('.screen').appendChild(createMessage(quote));
+
+  setTimeout(() => {
+    grab('.screen').appendChild(createMessage(quote));
+  }, 600);
 })
 
 
@@ -68,6 +75,7 @@ function createMessage(obj) {
   bubble.innerHTML += `<div class="user">${obj.user}</div>`;
   bubble.innerHTML += `<div class="message">${obj.message}</div>`;
   bubble.innerHTML += `<div class"time">${obj.time}</div>`;
+  console.log(bubble);
   
   return bubble;
 }
