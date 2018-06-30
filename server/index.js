@@ -4,10 +4,11 @@ const Koa = require('koa');
 const app = new Koa();
 const serve = require('koa-static');
 const bodyParser = require('koa-bodyparser');
-const io = require('socket.io').listen(app);
+const socket = require('socket.io');
 
 const config = require('./config.js');
 const router = require('./router.js');
+const models = require('./models/models-messages.js');
 
 const port = 3000;
 
@@ -20,11 +21,12 @@ const server = app
     else console.log(`Server listening on port ${port}.`);
   });
 
-// const io = socket(server);
+const io = socket(server);
 
-// io.on('connection', (socket,) => {
-//   console.log('socketing')
-//   socket.on('chat', (data) => {
-//     io.sockets.emit('chat', data);
-//   })
-// });
+io.on('connection', (socket) => {
+  console.log('An user connected');
+  socket.on('chat', (data) => {
+    io.sockets.emit('chat', data);
+    models.addToDb(data);
+  });
+});
