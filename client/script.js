@@ -12,6 +12,15 @@ grab('.nameInputButton').addEventListener('click', () => {
     grab('.welcome').style.display = 'none';
     grab('.mainContainer').style.display = 'block'
     grab('.dropMeDown').classList.remove('hidden')
+
+    
+    let welcome = `<h1 class="greeting u-pull-left"> Hi ${name}</h1>`
+    let greeting = document.createElement('div')
+    greeting.classList.add("doIt")
+    greeting.innerHTML = welcome;
+    grab('.options').prepend(greeting)
+
+
   } else {
     alert('Please, put a valid name (without spaces)');
   }
@@ -61,10 +70,12 @@ grab('.messageSend').addEventListener('click', async () => {
   let msg = new Quote ('Me', grab('.messageWrite').value);
   grab('.messageWrite').value = '';
   let quote = await getQuote(getRandomInt(1,4));
-  grab('.screen').appendChild(createMessage(msg))
+  grab('.screen').appendChild(createMessage(msg));
+  grab('.screen').scrollTop = grab('.screen').scrollHeight;
 
   setTimeout(() => {
     grab('.screen').appendChild(createMessage(quote));
+    screen.scrollTop = screen.scrollHeight;
   }, 600);
 })
 
@@ -72,10 +83,12 @@ grab('.messageSend').addEventListener('click', async () => {
 function createMessage(obj) {
 
   let bubble = document.createElement('div')
-  bubble.classList.add('message');
+  bubble.classList.add('bubble');
+  if (obj.user === 'Me') bubble.classList.add('myText');
+  else bubble.classList.add('otherText');
   bubble.innerHTML += `<div class="user">${obj.user}</div>`;
   bubble.innerHTML += `<div class="message">${obj.message}</div>`;
-  bubble.innerHTML += `<div class"time">${obj.time}</div>`;
+  bubble.innerHTML += `<div class="time">${obj.time}</div>`;
   console.log(bubble);
   
   return bubble;

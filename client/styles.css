@@ -15,7 +15,7 @@
 
 .welcome .container {
   width: 70%;
-  padding-top: 40%;
+  padding-top: 25vh;
 }
 
 .welcomeLogo {
@@ -177,6 +177,12 @@
   line-height: 1.5rem;
   margin-top: 2rem;
   color: white;
+  text-align: center;
+}
+
+.doIt {
+  display:flex;
+  justify-content: center;
 }
 
 .options input {
@@ -268,35 +274,88 @@
   width: 90%;
   height: 85%;
   margin: auto;
-  border-radius: 1%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   position: relative;
+  max-width: 1000px;
+  overflow: auto;
 
 }
 
 
 .messageWritingArea {
+  background-color: white;
+  width: 90vw;
+  height: 5vh;
+  margin: auto;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   display:flex;
+  justify-content: space-around;
+  padding-top: 1.5rem;
 }
-
 
 
 .messageWrite {
-  position: absolute;
-  bottom: 1%;
-  left: 5%;
-  width:63%;
-
+  width:65%;
 }
 
 .messageSend {
-  position: absolute;
-  bottom:1%;
-  right:5%;
+  width: 20%;
 }
 
 
 
 /*TEXT BUBBLES */
+
+.bubble {
+  width: 60%;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 1.5rem;
+  color: white;
+}
+
+.user {
+  font-size: 2.7rem;
+  font-weight: bold;
+}
+
+.message {
+  font-size: 2.2rem;
+}
+
+.time {
+float:right;}
+
+.myText {
+  float:left;
+  background-color: #516EF4;
+}
+
+.otherText {
+  float: right;
+  background-color: #3BF67A;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (min-width: 500px) {
@@ -357,12 +416,20 @@
   .screen {
     width: 85vw;
   }
+
+  .messageWritingArea {
+    width: 85vw;
+  }
 }
 
 @media (min-width: 1200px) {
 
 
   .screen {
+    width: 60vw;
+  }
+
+  .messageWritingArea {
     width: 60vw;
   }
 }
