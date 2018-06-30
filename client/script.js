@@ -56,16 +56,18 @@ grab('.messageSend').addEventListener('click', () => {
   
   let msg = grab('.messageWrite').value;
   if (msg) alert(msg);
+  grab('.screen').appendChild(createMessage(quote('trump')));
 })
 
 
-function textBubble (name) {
+function createMessage(obj) {
+
   let bubble = document.createElement('div')
   bubble.classList.add('message');
-  bubble.innerHTML += `<h2>${name}</h2>`;
-  bubble.innerHTML += `<p>${message}</p>`;
-  bubble.innerHTML += `<p>${timeStamp}</p>`;
-  screen.appendChild(bubble);
+  bubble.innerHTML += `<h2>${obj.user}</h2>`;
+  bubble.innerHTML += `<p>${obj.message}</p>`;
+  bubble.innerHTML += `<p>${obj.time}</p>`;
+  return bubble;
 }
 
 
