@@ -28,10 +28,7 @@ const getQuote = function (person) {
       .then((res) => res);
       console.log(result);
 
-    // .then((data) => {
-    //   let quote = new Quote(data.author, data.quote)
-    //   return quote;
-    // })
+
   }
 
   if (person === 'chuck') {

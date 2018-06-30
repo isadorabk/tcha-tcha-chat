@@ -58,6 +58,7 @@ grab('.messageSend').addEventListener('click', () => {
   if (msg) alert(msg);
 })
 
+
 function textBubble (name) {
   let bubble = document.createElement('div')
   bubble.classList.add('message');
