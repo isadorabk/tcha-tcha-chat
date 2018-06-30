@@ -21,6 +21,9 @@ function grab(element) {
   return document.querySelector(element);
 }
 
+function getRandomInt (min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 
 
@@ -48,16 +51,21 @@ const screen = grab('.screen')
 
 grab('.messageWrite').addEventListener('keyup', () => {
   event.preventDefault();
-  if (event.keyCode === 13) {
+  if (event.keyCode === 13 && grab('.messageWrite').value !== '') {
     grab('.messageSend').click();
   }
 })
 
-grab('.messageSend').addEventListener('click', () => {
+grab('.messageSend').addEventListener('click', async () => {
   
-  let msg = grab('.messageWrite').value;
-  if (msg) alert(msg);
-  grab('.screen').appendChild(createMessage(quote('trump')));
+  let msg = new Quote ('Me', grab('.messageWrite').value);
+  grab('.messageWrite').value = '';
+  let quote = await getQuote(getRandomInt(1,4));
+  grab('.screen').appendChild(createMessage(msg))
+
+  setTimeout(() => {
+    grab('.screen').appendChild(createMessage(quote));
+  }, 600);
 })
 
 
@@ -65,9 +73,11 @@ function createMessage(obj) {
 
   let bubble = document.createElement('div')
   bubble.classList.add('message');
-  bubble.innerHTML += `<h2>${obj.user}</h2>`;
-  bubble.innerHTML += `<p>${obj.message}</p>`;
-  bubble.innerHTML += `<p>${obj.time}</p>`;
+  bubble.innerHTML += `<div class="user">${obj.user}</div>`;
+  bubble.innerHTML += `<div class="message">${obj.message}</div>`;
+  bubble.innerHTML += `<div class"time">${obj.time}</div>`;
+  console.log(bubble);
+  
   return bubble;
 }
 

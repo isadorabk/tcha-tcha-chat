@@ -2,57 +2,41 @@ class Quote {
   constructor (author, quote) {
     this.user = author,
       this.message = quote,
-      this.time = 'now' //moment().unix()
+      this.time = Math.round((new Date()).getTime() / 1000);
   }
 }
 
-const quote = async function (person) {
-  const res = await getQuote(person);
-  return res;
-}
 
-const getQuote = function (person) {
+const getQuote = async function (person) {
   // TRUMP QUOTES
-  if (person === 'trump') {
-    return new Promise((resolve, reject) => {
-      fetch('https://api.whatdoestrumpthink.com/api/v1/quotes/random')
-      .then(response => response.json())
-      .then(data => resolve(new Quote('Donald Trump', data.message)))
-      .catch(err => reject(err));
-    })
+  if (person === 1) {
+    const response = await fetch('https://api.whatdoestrumpthink.com/api/v1/quotes/random');
+    const json = await response.json();
+    return new Quote('Donald Trump', json.message);
+
+  }
+
+  if (person === 2) {
+    // WEBDEV QUOTES
+    const response = await fetch('http://quotes.stormconsultancy.co.uk/random.json')
+    const json = await response.json();
+    return new Quote(json.author, json.quote);
+  }
+
+  if (person === 3) {
+
+    //Chuck Norris
+    const response = await fetch('https://api.chucknorris.io/jokes/random')
+    const json = await response.json();
+    return new Quote('Chuck Norris', json.value);
+    
+  }
+  if (person === 4) {
+
+    //Ron Swanson
+    const response = await fetch('https://ron-swanson-quotes.herokuapp.com/v2/quotes')
+    const json = await response.json();
+    return new Quote('Ron Swanson', json[0]);
+
   }
 }
-
-
-  //  return new Promise((resolve,reject) => {
-
-  //    return fetch('https://api.whatdoestrumpthink.com/api/v1/quotes/random')
-  //    .then(function (response) {
-  //      return response.json();
-  //     })
-  //     .then((data) => {
-  //       resolve(new Quote('Donald Trump', data.message));
-  //     })
-  //     .catch((err) => reject(err));
-  //   })
-// }
-// if (person === 'webdev') {
-//   // WEBDEV QUOTES
-//   const result = fetch('http://quotes.stormconsultancy.co.uk/random.json')
-//     .then((response) => response.json())
-//     .then((res) => res);
-//   console.log(result);
-// }
-
-// if (person === 'chuck') {
-
-//   //Chuck Norris
-//   fetch('https://api.chucknorris.io/jokes/random')
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (myJson) {
-//       let quote = new Quote('Chuck norris', myJson.value)
-//       console.log(quote);
-//     });
-// }
