@@ -27,57 +27,40 @@
 
   <!-- Main Page -->
 
-<div class="none">
-  <div class="dropMeDown dropMeDownClosed">
+  <div class="none">
+    <div class="dropMeDown dropMeDownClosed">
 
-    <div class="options">
-      <h1 class="greeting u-pull-left"> Hi ${name}</h1>
-      <input class="button-primary u-max-full-width" type="button" value="Chat Room">
-      <input class="button-primary u-max-full-width" type="button" value="Bot Chat">
+      <div class="options">
+        <h1 class="greeting u-pull-left"> Hi ${name}</h1>
+        <input class="button-primary u-max-full-width" type="button" value="Chat Room">
+        <input class="button-primary u-max-full-width" type="button" value="Bot Chat">
 
-      <div class="checkers">
+        <div class="checkers">
 
-        <label class="container">WebDev
-          <input type="checkbox" checked="checked" value="webdev">
-          <span class="checkmark"></span>
-        </label>
-        
-        <label class="container">Trump
-          <input type="checkbox" value="trump">
-          <span class="checkmark"></span>
-        </label>
-        
-        <label class="container">Chuck
-          <input type="checkbox" value="chuck">
-          <span class="checkmark"></span>
-        </label>
-
-      </div>
+          <label class="container">WebDev
+            <input class="checkmark hideme" type="checkbox" checked="checked" value="webdev">
+            <span class="checkmark"></span>
+          </label>
           
-      <input class="button-primary u-max-full-width" type="button" value="Donate">
+          <label class="container">Trump
+            <input class="checkmark hideme" type="checkbox" value="trump">
+            <span class="checkmark"></span>
+          </label>
+          
+          <label class="container"> Chuck
+            <input class="checkmark hideme" type="checkbox" value="chuck">
+            <span class="checkmark"></span>
+          </label>
 
-      </div>  
+        </div>
+            
+        <input class="button-primary u-max-full-width " type="button" value="Donate">
+
+        </div>  
+      </div>
     </div>
   </div>
-</div>
 
-
-
-
-
-
-
-
-<!-- <nav>
-    <h1 class="greeting">Hi ${name}</h1>
-    <ul>
-      <li>Bot Chat</li>
-      <li>Human Chat</li>
-      <li>Settings</li>
-      <li>Other Stuff</li>
-      <li>Donate</li>
-    </ul>
-  </nav> -->
 
 
 
@@ -95,11 +78,14 @@
 
     <div class="screen">
 
+
+      <div class="messageWritingArea">
         <input class="messageWrite" type="text" placeholder="Write a message...">
         <input type="submit" class="messageSend" value="send">
+      </div>
+
     </div>
     
-    </div>
   </div>
   
  

@@ -85,6 +85,9 @@
 .menuImg {
   width: 100%;
   transition-duration: .3s;
+  border: 2px solid #41C8F2;
+  border-radius: 50%;
+  z-index: 15
 }
 
 .menuImg:hover {
@@ -94,15 +97,19 @@
 
 .menuLogoOpen {
   transform: translateY(40vh) rotate(360deg);
-  transition-duration: 1.5s;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(.77,.32,.58,1.57);
   position: relative; 
   z-index: 10;
+
 }
 
 .menuLogoClosed {
-  transition-duration: 1.5s;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(.77,.32,.58,1.57);
   position: relative; 
   z-index: 10;
+
 }
 
 
@@ -127,15 +134,18 @@
 }
 
 .dropMeDownOpen {
-  transition-duration: 1.5s;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(.77,.32,.58,1.57);
   position: relative;
   z-index: 10;
+  padding-bottom: 3rem;
 
 }
 
 
 .dropMeDownClosed{
-  transition-duration: 1.5s;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(.77,.32,.58,1.57);
   transform: translateY(-40vh);
   position: relative;
   z-index: 10;
@@ -164,10 +174,14 @@
 
 .options input {
   font-size: 3rem;
+  height: 7rem;
 }
 
 .options label {
   font-size: 2.5rem;
+  line-height: 4rem;
+  margin-bottom: 1rem;
+  color: white;
 }
 
 .checkers {
@@ -175,6 +189,59 @@
   flex-direction: column;
   justify-content: center;
   align-content: space-between;
+}
+
+
+
+
+
+
+/* Create a custom checkbox */
+
+
+
+.checkmark {
+  position: absolute;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #eee;
+  margin-left: 1.5rem;
+  margin-top: .5rem;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.hideme {
+  display: none !important;
 }
 
 
@@ -199,11 +266,19 @@
 
 }
 
+
+.messageWritingArea {
+  display:flex;
+}
+
+
+
 .messageWrite {
   position: absolute;
   bottom: 1%;
   left: 5%;
-  width:65%;
+  width:63%;
+
 }
 
 .messageSend {
