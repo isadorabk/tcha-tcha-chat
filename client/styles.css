@@ -93,7 +93,7 @@
 }
 
 .menuLogoOpen {
-  transform: translateY(70vh) rotate(360deg);
+  transform: translateY(40vh) rotate(360deg);
   transition-duration: 1.5s;
   position: relative; 
   z-index: 10;
@@ -116,14 +116,11 @@
 
 .dropMeDown {
   text-align: center;
- 
   background-color: #41C8F2;
-  height: 70vh
+  height: 40vh
 }
 
-.greeting {
-  font-size: 10rem;
-}
+
 
 .none{
   height: 0px;
@@ -139,16 +136,45 @@
 
 .dropMeDownClosed{
   transition-duration: 1.5s;
-  transform: translateY(-70vh);
+  transform: translateY(-40vh);
   position: relative;
   z-index: 10;
 }
 
-.nav {
+
+
+
+
+/*menu bar text*/
+
+
+
+.options {
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+}
+
+
+.greeting {
+  font-size: 10rem;
+  color: white;
+}
+
+.options input {
+  font-size: 3rem;
+}
+
+.options label {
+  font-size: 2.5rem;
+}
+
+.checkers {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
 }
 
 
@@ -185,4 +211,10 @@
   bottom:1%;
   right:5%;
 }
+
+
+
+/*TEXT BUBBLES /*
+
+
 

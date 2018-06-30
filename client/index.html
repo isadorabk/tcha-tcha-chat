@@ -29,31 +29,34 @@
 
 <div class="none">
   <div class="dropMeDown dropMeDownClosed">
-      <div class="greeting"> Hi ${name}</div>
-      <ul class="nav">
-      <li>Chat Room</li>
-      <li>BotChat</li>
+
+    <div class="options">
+      <h1 class="greeting u-pull-left"> Hi ${name}</h1>
+      <input class="button-primary u-max-full-width" type="button" value="Chat Room">
+      <input class="button-primary u-max-full-width" type="button" value="Bot Chat">
+
+      <div class="checkers">
+
         <label class="container">WebDev
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
+          <input type="checkbox" checked="checked" value="webdev">
+          <span class="checkmark"></span>
+        </label>
+        
+        <label class="container">Trump
+          <input type="checkbox" value="trump">
+          <span class="checkmark"></span>
+        </label>
+        
+        <label class="container">Chuck
+          <input type="checkbox" value="chuck">
+          <span class="checkmark"></span>
+        </label>
+
+      </div>
           
-          <label class="container">Trump
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          
-          <label class="container">Chuck
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          
-          <label class="container">Four
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-      <li>Donation</li>
-      </ul>
+      <input class="button-primary u-max-full-width" type="button" value="Donate">
+
+      </div>  
     </div>
   </div>
 </div>
