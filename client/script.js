@@ -11,6 +11,7 @@ grab('.nameInputButton').addEventListener('click', () => {
     //make the page dissapear and the chat page appear
     grab('.welcome').style.display = 'none';
     grab('.mainContainer').style.display = 'block'
+    grab('.dropMeDown').classList.remove('hidden')
   } else {
     alert('Please, put a valid name (without spaces)');
   }

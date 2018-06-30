@@ -1,7 +1,11 @@
 /*welcome page styles*/
 
+.hidden {
+  display:none;
+}
+
 .welcome {
-  display: none;  
+  /* display: none;   */
   /* WHILE TESTING MAIN PAGE */
   
   width: 100%;
@@ -55,7 +59,7 @@
 /* Chat */
 
 .mainContainer {
-  /*display: none;*/
+  display: none;
 
   width: 100%;
   height: 100vh;
@@ -70,6 +74,7 @@
 
 .menu {
   padding: 10px;
+
 }
 
 
@@ -124,7 +129,7 @@
 .dropMeDown {
   text-align: center;
   background-color: #41C8F2;
-  height: 40vh
+  height: 40vh;
 }
 
 
