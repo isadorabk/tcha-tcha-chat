@@ -52,11 +52,12 @@ grab('.messageWrite').addEventListener('keyup', () => {
   }
 })
 
-grab('.messageSend').addEventListener('click', () => {
+grab('.messageSend').addEventListener('click', async () => {
   
-  let msg = grab('.messageWrite').value;
-  if (msg) alert(msg);
-  grab('.screen').appendChild(createMessage(quote('trump')));
+  let msg = new Quote ('Me', grab('.messageWrite').value);
+  let quote = await getQuote('trump');
+  grab('.screen').appendChild(createMessage(msg))
+  grab('.screen').appendChild(createMessage(quote));
 })
 
 
@@ -64,9 +65,10 @@ function createMessage(obj) {
 
   let bubble = document.createElement('div')
   bubble.classList.add('message');
-  bubble.innerHTML += `<h2>${obj.user}</h2>`;
-  bubble.innerHTML += `<p>${obj.message}</p>`;
-  bubble.innerHTML += `<p>${obj.time}</p>`;
+  bubble.innerHTML += `<div class="user">${obj.user}</div>`;
+  bubble.innerHTML += `<div class="message">${obj.message}</div>`;
+  bubble.innerHTML += `<div class"time">${obj.time}</div>`;
+  
   return bubble;
 }
 

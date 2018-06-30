@@ -6,53 +6,29 @@ class Quote {
   }
 }
 
-const quote = async function (person) {
-  const res = await getQuote(person);
-  return res;
-}
 
-const getQuote = function (person) {
+const getQuote = async function (person) {
   // TRUMP QUOTES
   if (person === 'trump') {
-    return new Promise((resolve, reject) => {
-      fetch('https://api.whatdoestrumpthink.com/api/v1/quotes/random')
-      .then(response => response.json())
-      .then(data => resolve(new Quote('Donald Trump', data.message)))
-      .catch(err => reject(err));
-    })
+    const response = await fetch('https://api.whatdoestrumpthink.com/api/v1/quotes/random');
+    const json = await response.json();
+    return new Quote('Trump', json.message);
+
+  }
+
+  if (person === 'webdev') {
+    // WEBDEV QUOTES
+    const response = await fetch('http://quotes.stormconsultancy.co.uk/random.json')
+    const json = await response.json();
+    return new Quote(json.author, json.quote);
+  }
+
+  if (person === 'chuck') {
+
+    //Chuck Norris
+    const response = await fetch('https://api.chucknorris.io/jokes/random')
+    const json = await response.json();
+    return new Quote('Chuck Norris', json.value);
+    
   }
 }
-
-
-  //  return new Promise((resolve,reject) => {
-
-  //    return fetch('https://api.whatdoestrumpthink.com/api/v1/quotes/random')
-  //    .then(function (response) {
-  //      return response.json();
-  //     })
-  //     .then((data) => {
-  //       resolve(new Quote('Donald Trump', data.message));
-  //     })
-  //     .catch((err) => reject(err));
-  //   })
-// }
-// if (person === 'webdev') {
-//   // WEBDEV QUOTES
-//   const result = fetch('http://quotes.stormconsultancy.co.uk/random.json')
-//     .then((response) => response.json())
-//     .then((res) => res);
-//   console.log(result);
-// }
-
-// if (person === 'chuck') {
-
-//   //Chuck Norris
-//   fetch('https://api.chucknorris.io/jokes/random')
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (myJson) {
-//       let quote = new Quote('Chuck norris', myJson.value)
-//       console.log(quote);
-//     });
-// }
