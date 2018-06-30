@@ -45,6 +45,19 @@ grab('.menuLogo').addEventListener('click', () => {
 
 const screen = grab('.screen')
 
+grab('.messageWrite').addEventListener('keyup', () => {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    grab('.messageSend').click();
+  }
+})
+
+grab('.messageSend').addEventListener('click', () => {
+  
+  let msg = grab('.messageWrite').value;
+  if (msg) alert(msg);
+})
+
 
 function textBubble (name) {
   let bubble = document.createElement('div')
